@@ -1,0 +1,74 @@
+{
+  "fixture": "hybrid_incomplete.md",
+  "supplement": "hybrid_incomplete_supp.md",
+  "synthetic": true,
+  "language": "en",
+  "expected_paradigm": "hybrid des+sd",
+  "expected_variants": ["des", "sd"],
+  "detection_basis": "inferred",
+  "detection_evidence": "No paradigm is declared ('a simulation model'). DES vocabulary: 'individual patients flow through triage, assessment and treatment', 'entities with attributes', 'activities', 'resources are 6 nurses and 3 doctors', 'queue for triage', 'arrival profile'. SD vocabulary: 'continuously accumulating level of staff fatigue', 'one level ... with an inflow ... and an outflow', 'reinforcing loop', 'No graphical (lookup) functions are used'. The two parts are explicitly coupled (section 4, last paragraph), so a hybrid DES+SD audit is expected after a SOFT pause (or, when the user says 'just do it', with header basis 'inferred, user said proceed').",
+  "expected_states": {
+    "1.1": "Addressed",
+    "1.2": "Addressed",
+    "1.3": "Not applicable",
+    "2.1": "Addressed",
+    "2.2": "Addressed",
+    "2.3": "Not applicable",
+    "2.4": "Missing",
+    "2.5": "Partially addressed",
+    "3.1": "Missing",
+    "3.2": "Missing",
+    "3.3": "Addressed",
+    "3.4": "Missing",
+    "4.1": "Missing",
+    "4.2": "Addressed",
+    "4.3": "Addressed",
+    "5.1": "Partially addressed",
+    "5.2": "Partially addressed",
+    "5.3": "Missing",
+    "5.4": "Missing",
+    "6.1": "Missing"
+  },
+  "expected_subitem_states": {
+    "DES 2.5.1 Entities": "Addressed",
+    "DES 2.5.2 Activities": "Addressed",
+    "DES 2.5.3 Resources": "Addressed",
+    "DES 2.5.4 Queues": "Missing",
+    "DES 2.5.5 Entry/Exit Points": "Addressed",
+    "SD 2.5.1 Stocks/Levels": "Addressed",
+    "SD 2.5.2 Flows/Rates": "Partially addressed",
+    "SD 2.5.3 Constants / Converters / auxiliary variables": "Partially addressed",
+    "SD 2.5.4 Graphical functions/lookup tables": "Not applicable",
+    "SD 2.5.5 Sources and Sinks": "Missing"
+  },
+  "hybrid_interface_check": {"H.1": "Addressed", "evidence": "Section 4, last paragraph: 'The two parts are coupled in both directions: every simulated hour the current value of the fatigue level is read and converted into a treatment-time multiplier ... in the other direction, the number of patients in treatment at the end of each hour is passed to the fatigue accumulation inflow.'"},
+  "tally": {"Addressed": 7, "Partially addressed": 3, "Missing": 8, "Not applicable": 2},
+  "from_supplement": [
+    {"item": "3.3", "state": "Addressed", "evidence": "Supplement S1 table of all base-case parameters with distributions, plus the distribution-selection sentence"},
+    {"item": "4.3", "state": "Addressed", "evidence": "Supplement S2: stochastic, 30 replications, justification by CI half-width"},
+    {"item": "5.2", "state": "Partially addressed", "evidence": "Supplement S2 states the common-random-number stream allocation (second sentence of DES-supp 5.2) but no document names the random-number algorithm (first sentence)"}
+  ],
+  "deliberate_gaps": [
+    {"item": "2.4", "state": "Missing", "derivation": "Section 4 mentions 'A bespoke triage priority algorithm assigns each patient to one of the five categories' but gives no detail, pseudo-code or reference to other published work."},
+    {"item": "2.5", "state": "Partially addressed", "derivation": "DES side: entities, activities, resources and entry/exit are described; no queue discipline is stated anywhere. SD side: the level is named with units and its inflow/outflow; flow equations are absent (only verbal 'rises with', 'proportional to'); constants appear only as values in the supplement, not as equations with units in the model description; sources/sinks are not described."},
+    {"item": "3.1", "state": "Missing", "derivation": "The main text mentions 'last year's attendances' only in passing and the supplement gives n = 61,400 attendances for the fit, but neither names the data source, its date range nor other sources; graders may accept Partially addressed if they credit the supplement's n = 61,400."},
+    {"item": "3.2", "state": "Missing", "derivation": "No statement on data manipulation anywhere."},
+    {"item": "3.4", "state": "Missing", "derivation": "No assumptions are stated."},
+    {"item": "4.1", "state": "Missing", "derivation": "Nothing on terminating/non-terminating, warm-up, initial queue contents (DES 4.1); the supplement's 'Initial fatigue 0' is a single parameter value, not an initialisation statement for the SD side listing initial values of stocks and auxiliaries; graders may accept Partially addressed if they credit that row."},
+    {"item": "5.1", "state": "Partially addressed", "derivation": "Section 6: 'AnyLogic 8.8 (Personal Learning Edition)' but no operating system, version or build number."},
+    {"item": "5.3", "state": "Missing", "derivation": "No event-processing mechanism, no integration method or DT for the fatigue level."},
+    {"item": "5.4", "state": "Missing", "derivation": "No run time or hardware."},
+    {"item": "6.1", "state": "Missing", "derivation": "No sharing statement."}
+  ],
+  "justified_not_applicable": [
+    {"item": "1.3", "rule": "R21", "evidence": "Section 3: 'The model has so far been run only for the base case; no scenario experiments have been conducted.'"},
+    {"item": "2.3", "rule": "R23", "evidence": "same sentence"},
+    {"item": "SD 2.5.4", "rule": "R1", "evidence": "Section 4: 'No graphical (lookup) functions are used.'"}
+  ],
+  "cross_reference_expectations": {
+    "1.3 <-> 2.3": "both N/A, consistent",
+    "4.3/5.2 <-> 3.3": "stochastic (S2) and distributions (S1) consistent; 5.2 algorithm absent is a true gap",
+    "5.3 <-> 5.1": "5.3 Missing and 5.1 lacks build number: flag"
+  },
+  "notes": "Tolerance for graders: 3.1 and 4.1 may be graded Partially addressed instead of Missing if the supplement rows are credited; the evals.json expectations for this fixture therefore test Missing-or-Partial on those two items and exact states elsewhere. The key multi-file test is that 3.3 and 4.3 are credited from the supplement with a supplement locator."
+}

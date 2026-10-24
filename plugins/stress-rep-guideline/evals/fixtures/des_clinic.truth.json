@@ -1,0 +1,58 @@
+{
+  "fixture": "des_clinic.md",
+  "synthetic": true,
+  "language": "en",
+  "expected_paradigm": "des",
+  "expected_variants": ["des"],
+  "detection_basis": "declared",
+  "detection_evidence": "Section 1: 'We built a discrete-event simulation (DES) model of the clinic's patient flow'",
+  "expected_states": {
+    "1.1": "Addressed",
+    "1.2": "Addressed",
+    "1.3": "Addressed",
+    "2.1": "Addressed",
+    "2.2": "Addressed",
+    "2.3": "Addressed",
+    "2.4": "Addressed",
+    "2.5": "Addressed",
+    "3.1": "Addressed",
+    "3.2": "Addressed",
+    "3.3": "Addressed",
+    "3.4": "Addressed",
+    "4.1": "Partially addressed",
+    "4.2": "Addressed",
+    "4.3": "Addressed",
+    "5.1": "Addressed",
+    "5.2": "Missing",
+    "5.3": "Addressed",
+    "5.4": "Addressed",
+    "6.1": "Missing"
+  },
+  "expected_subitem_states": {
+    "1.3a": "Addressed",
+    "1.3b": "Not applicable",
+    "1.3c": "Not applicable",
+    "2.5.1": "Addressed",
+    "2.5.2": "Addressed",
+    "2.5.3": "Addressed",
+    "2.5.4": "Addressed",
+    "2.5.5": "Addressed"
+  },
+  "tally": {"Addressed": 17, "Partially addressed": 1, "Missing": 2, "Not applicable": 0},
+  "deliberate_gaps": [
+    {"item": "4.1", "state": "Partially addressed", "derivation": "Section 6.1 states non-terminating, a 4-week warm-up and an empty start, but gives no analysis method used to select the warm-up length (DES-supp 4.1: 'its length and the analysis method used to select it')."},
+    {"item": "5.2", "state": "Missing", "derivation": "No section or sentence names the random-number algorithm or how seeds/streams are allocated; section 7 covers software, execution and hardware only."},
+    {"item": "6.1", "state": "Missing", "derivation": "No statement anywhere on how the model, software or files could be obtained; section 8 is results and 9 is conclusion."}
+  ],
+  "justified_not_applicable_subpoints": [
+    {"item": "1.3b", "evidence": "Section 3: 'We did not use a designed experiment or simulation optimisation'"},
+    {"item": "1.3c", "evidence": "Section 3: 'We did not use a designed experiment or simulation optimisation'"}
+  ],
+  "from_supplement": [],
+  "cross_reference_expectations": {
+    "1.3 <-> 2.3": "consistent (scenarios listed in section 3; section 4.3 states the logic is unchanged)",
+    "5.3 <-> 5.1": "consistent (SimPy process-interaction is published; versions given)",
+    "4.3/5.2 <-> 3.3": "stochastic inputs in Table 2 and 50 replications in 6.3; 5.2 Missing is therefore a true gap, not N/A"
+  },
+  "notes": "Everything else is addressed in the main text with quotable locators (section numbers, Table 2, Figure 1). The document is in English; the report should be in English."
+}

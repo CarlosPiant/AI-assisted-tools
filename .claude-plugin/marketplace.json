@@ -1,0 +1,29 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "ai-assisted-tools",
+  "description": "AI tools for academic research built on Claude: Claude Code plugins for turning methods papers into tested skills and for auditing simulation studies against reporting guidelines.",
+  "owner": {
+    "name": "Carlos Pineda",
+    "url": "https://github.com/CarlosPiant"
+  },
+  "plugins": [
+    {
+      "name": "skill-generator",
+      "description": "Turn a manuscript, methods paper, framework, guideline, or tutorial into a tested Claude Code skill with a design brief, a paired benchmark against a no-skill baseline, and a usage guide.",
+      "version": "1.0.0",
+      "source": "./plugins/skill-generator",
+      "category": "development",
+      "author": { "name": "Carlos Pineda" },
+      "homepage": "https://github.com/CarlosPiant/AI-assisted-tools/tree/main/plugins/skill-generator"
+    },
+    {
+      "name": "stress-rep-guideline",
+      "description": "Audit a DES, system dynamics, agent-based, or hybrid simulation write-up against the STRESS reporting checklist (Monks et al. 2019), item by item with quoted evidence.",
+      "version": "1.0.0",
+      "source": "./plugins/stress-rep-guideline",
+      "category": "productivity",
+      "author": { "name": "Carlos Pineda" },
+      "homepage": "https://github.com/CarlosPiant/AI-assisted-tools/tree/main/plugins/stress-rep-guideline"
+    }
+  ]
+}

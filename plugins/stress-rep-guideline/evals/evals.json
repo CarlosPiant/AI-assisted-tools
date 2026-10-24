@@ -1,0 +1,115 @@
+{
+  "skill_name": "stress-rep-guideline",
+  "iteration_cap": 3,
+  "runs_per_case": 1,
+  "threshold": 0.80,
+  "threshold_tier": "standard (skill-eval-protocol.md: conservative 0.90 / standard 0.80 / experimental 0.70; with-skill rate must also exceed without-skill rate)",
+  "fixtures_note": "All fixtures under evals/fixtures/ are synthetic (first-line banner) and each has a <name>.truth.json with the expected state of every item. Graders read only the assertions below and the run's outputs/ folder.",
+  "evals": [
+    {
+      "id": 1,
+      "name": "des_clinic_declared",
+      "prompt": "Apply STRESS to evals/fixtures/des_clinic.md and tell me what is missing before I submit it.",
+      "expected_output": "A STRESS-DES audit report (Markdown file named stress_audit_des_clinic.md) with the 20 items in six sections, each with a state, quoted evidence and locator; header naming STRESS-DES with basis 'declared', the files audited, the 3.2/3.3 numbering note and a four-state tally of 17 / 1 / 2 / 0; 4.1 Partially addressed (no warm-up selection method), 5.2 Missing, 6.1 Missing; a chat summary listing those three items with the verbatim STRESS wording to add.",
+      "files": ["evals/fixtures/des_clinic.md"],
+      "expectations": [
+        "Selects STRESS-DES and states the basis as 'declared' (the document says 'discrete-event simulation (DES) model' in section 1).",
+        "Produces a Markdown report file whose name starts with stress_audit_ and contains exactly the 20 STRESS items 1.1 to 6.1 grouped in six sections.",
+        "Reports 4.1 Initialisation as Partially addressed, naming the absent clause as the analysis method used to select the warm-up length.",
+        "Reports 5.2 Random sampling as Missing.",
+        "Reports 6.1 Computer Model Sharing Statement as Missing.",
+        "Reports every other item (1.1, 1.2, 1.3, 2.1, 2.2, 2.3, 2.4, 2.5, 3.1, 3.2, 3.3, 3.4, 4.2, 4.3, 5.1, 5.3, 5.4) as Addressed.",
+        "Every Addressed or Partially addressed item carries a verbatim quote from des_clinic.md and a locator (section number, table or figure).",
+        "Expands 2.5 into the five DES sub-items (Entities, Activities, Resources, Queues, Entry/Exit Points) with a state each, all Addressed.",
+        "Marks 1.3b (Design of experiments) and 1.3c (Simulation Optimisation) as Not applicable citing the sentence 'We did not use a designed experiment or simulation optimisation'.",
+        "The report header notes that numbering follows the published checklists (3.2 Pre-processing, 3.3 Input parameters) and differs from the article's Table 3.",
+        "The tally reads Addressed 17, Partially addressed 1, Missing 2, Not applicable 0, and matches the per-item states in the tables.",
+        "For each Missing or Partially addressed item the report repeats the verbatim STRESS-DES recommendation (e.g. 'State the algorithm used to generate random samples ... e.g. Mersenne Twister') rather than a paraphrase.",
+        "Does not assign a numeric score, severity tier or pass/fail verdict."
+      ]
+    },
+    {
+      "id": 2,
+      "name": "sd_epidemic_spanish",
+      "prompt": "Aplica la guía STRESS a evals/fixtures/sd_epidemic.md y dime qué elementos del checklist faltan.",
+      "expected_output": "A STRESS-SD audit report in English with evidence quotes in Spanish; header naming STRESS-SD, basis 'declared'; tally 15 / 1 / 2 / 2; 3.1 Partially addressed (no sample sizes or date ranges), 4.3 Missing (calibration mentioned without method or number of runs), 5.4 Missing; 2.4 and 5.2 Not applicable with the document's own justification quoted; feedback loops credited under 2.1/2.2.",
+      "files": ["evals/fixtures/sd_epidemic.md"],
+      "expectations": [
+        "Selects STRESS-SD with basis 'declared' (section 1: 'modelo de dinámica de sistemas').",
+        "Writes the report prose and the state labels in English while the evidence quotes are in Spanish, copied verbatim from the document.",
+        "Reports 3.1 Data sources as Partially addressed, naming the absent details (sample size, date ranges, use within the study).",
+        "Reports 4.3 Estimation approach as Missing (or Partially addressed) and explicitly notes that calibration is mentioned ('se calibró frente a los casos semanales') without the algorithm/search method or the number of runs.",
+        "Reports 5.4 System Specification as Missing.",
+        "Reports 2.4 Algorithms as Not applicable, quoting 'El modelo no contiene algoritmos que imiten procesos manuales o complejos del mundo real' as the justification.",
+        "Reports 5.2 Random sampling as Not applicable because the document states the model is deterministic ('totalmente determinista; no se utilizan entradas estocásticas').",
+        "Expands 2.5 into the five SD sub-items (Stocks/Levels, Flows/Rates, Constants / Converters / auxiliary variables, Graphical functions/lookup tables, Sources and Sinks), all Addressed, citing the tables in section 4.5.",
+        "Credits the feedback loops (B1, R1, B2) as evidence under 2.1 and/or 2.2, not as a missing 2.5 component.",
+        "Reports 5.3 Model execution as Addressed quoting the integration method and time step (Euler, DT = 0,25 semanas).",
+        "Reports 6.1 as Addressed quoting section 8 (model file included as supplementary material).",
+        "The tally reads Addressed 15, Partially addressed 1, Missing 2, Not applicable 2 and matches the per-item states.",
+        "Every Not applicable item appears in a dedicated section with its rule and the document's justification."
+      ]
+    },
+    {
+      "id": 3,
+      "name": "abs_market_no_keyword",
+      "prompt": "Is my ABS model reported completely? Please check evals/fixtures/abs_market.md against the simulation reporting checklist and list what a reviewer would ask for.",
+      "expected_output": "A STRESS-ABS audit report; header naming STRESS-ABS, basis 'declared'; tally 17 / 2 / 1 / 0; 3.4 Partially addressed (assumptions not justified), 4.1 Partially addressed (no warm-up statement), 5.4 Missing with the author's 'not applicable for a model of this size' flagged as an unjustified N/A claim; 2.5.4 Entry / Exit Not applicable with the fixed-population justification quoted; 1.3a, 1.3c, 1.3d Not applicable.",
+      "files": ["evals/fixtures/abs_market.md"],
+      "expectations": [
+        "Triggers the STRESS audit without the word 'STRESS' in the prompt and selects STRESS-ABS with basis 'declared'.",
+        "Reports 3.4 Assumptions as Partially addressed because the four assumptions are stated but not justified (ABS wording: 'state and justify the assumptions').",
+        "Reports 4.1 Initialisation as Partially addressed because no statement on a warm-up period is made.",
+        "Does not accept the author's claim 'Hardware specification: not applicable for a model of this size': reports 5.4 as Missing, or as Not applicable explicitly flagged as lacking justification, and cites that 5.4 is never automatically not applicable.",
+        "Reports 2.5.4 Entry / Exit as Not applicable and quotes 'no agents are created or destroyed, so rules for agent entry and exit are not applicable' as the justification.",
+        "Expands 2.5 into the four ABS sub-items (Environment, Agents, Interaction Topology, Entry / Exit) and reports 2.5.1-2.5.3 as Addressed.",
+        "Reports 1.3b Scenario based analysis as Addressed and 1.3a, 1.3c, 1.3d as Not applicable citing 'We did not test theories, run a designed experiment, or use simulation optimisation'.",
+        "Reports 5.2 Random sampling as Addressed quoting the PCG64 generator and the seed-per-replication rule.",
+        "Reports 5.3 Model execution as Addressed quoting the weekly time step and the synchronous-update resolution of concurrent decisions.",
+        "Reports 6.1 as Addressed (repository and archive DOI).",
+        "Every item other than 3.4, 4.1 and 5.4 is Addressed and the tally reads Addressed 17, Partially addressed 2, Missing 1, Not applicable 0.",
+        "The Not applicable section distinguishes the justified N/A (2.5.4) from the unjustified claim (5.4)."
+      ]
+    },
+    {
+      "id": 4,
+      "name": "hybrid_inferred_with_supplement",
+      "prompt": "Run the STRESS test on evals/fixtures/hybrid_incomplete.md; the supplementary material is evals/fixtures/hybrid_incomplete_supp.md. Just do it, no need to ask me questions.",
+      "expected_output": "A merged STRESS-DES + STRESS-SD (hybrid) audit; header basis 'inferred, user said proceed' with the vocabulary evidence; both files listed as audited; 3.3 and 4.3 Addressed with locators in the supplement; 5.2 Partially addressed from the supplement (CRN streams but no algorithm); 1.3 and 2.3 Not applicable (base case only); 2.4 Missing; 2.5 Partially addressed with DES and SD sub-items shown separately; hybrid interface check H.1 Addressed quoting the coupling paragraph; tally 7 / 3 / 8 / 2.",
+      "files": [
+        "evals/fixtures/hybrid_incomplete.md",
+        "evals/fixtures/hybrid_incomplete_supp.md"
+      ],
+      "expectations": [
+        "Identifies the model as a hybrid of discrete-event simulation and system dynamics, applies both STRESS-DES and STRESS-SD, and states the basis as inferred (with 'user said proceed' or equivalent because no question was asked), citing the DES vocabulary (entities, activities, resources, queue, arrival) and the SD vocabulary (level, inflow, outflow, reinforcing loop).",
+        "Lists both hybrid_incomplete.md and hybrid_incomplete_supp.md as files audited.",
+        "Reports 3.3 Input parameters as Addressed with a locator in hybrid_incomplete_supp.md (section S1).",
+        "Reports 4.3 Estimation approach as Addressed with a locator in hybrid_incomplete_supp.md (section S2: 30 replications with the CI half-width justification).",
+        "Reports 5.2 Random sampling as Partially addressed: the supplement states the common-random-number stream allocation but no file names the random-number algorithm.",
+        "Reports 1.3 Experimentation Aims and 2.3 Scenario logic as Not applicable, quoting 'no scenario experiments have been conducted'.",
+        "Reports 2.4 Algorithms as Missing, noting that the 'bespoke triage priority algorithm' is mentioned without detail or reference.",
+        "Shows 2.5 Components with the DES sub-items (Entities, Activities, Resources, Queues, Entry/Exit Points) and the SD sub-items (Stocks/Levels, Flows/Rates, Constants / Converters / auxiliary variables, Graphical functions/lookup tables, Sources and Sinks) as separate rows; DES Queues Missing; SD Flows/Rates Partially addressed (no equations); SD Graphical functions Not applicable quoting 'No graphical (lookup) functions are used'.",
+        "Includes a hybrid interface check and reports it as Addressed, quoting the paragraph beginning 'The two parts are coupled in both directions'.",
+        "Reports 5.1 as Partially addressed (AnyLogic 8.8 named; no operating system or build number) and 5.3, 5.4, 6.1, 3.2, 3.4 as Missing.",
+        "Reports 3.1 and 4.1 as Missing or Partially addressed (not Addressed).",
+        "Reports 4.2 Run length as Addressed (7 days, minutes) and 1.1, 1.2, 2.1, 2.2 as Addressed.",
+        "The tally over the 20 items is consistent with the per-item states shown (expected Addressed 7, Partially addressed 3, Missing 8, Not applicable 2; one-item deviations on 3.1/4.1 acceptable if the states shown match)."
+      ]
+    },
+    {
+      "id": 5,
+      "name": "decoy_markov_stop",
+      "prompt": "apply STRESS to evals/fixtures/decoy_markov.md",
+      "expected_output": "No audit. A short message saying the document describes a cohort Markov cost-effectiveness model, that STRESS covers discrete-event simulation, system dynamics and agent-based simulation only, and that the audit was not performed; optionally a pointer to a health-economic reporting checklist.",
+      "files": ["evals/fixtures/decoy_markov.md"],
+      "expectations": [
+        "Recognises the document as a Markov cohort / health-economic model rather than a DES, SD or ABS model.",
+        "Stops without auditing: no 20-item table, no per-item states, no tally are produced.",
+        "Names the three paradigms STRESS covers: discrete-event simulation, system dynamics and agent-based simulation.",
+        "Does not write a stress_audit_ report file containing item states (a brief note file explaining the stop is acceptable).",
+        "Does not treat 'Monte Carlo draws' in the PSA as evidence of a covered simulation paradigm.",
+        "Does not invent a 'closest variant' audit unless the user explicitly asks for one."
+      ]
+    }
+  ]
+}

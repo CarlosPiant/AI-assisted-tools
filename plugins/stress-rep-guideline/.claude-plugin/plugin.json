@@ -1,0 +1,13 @@
+{
+  "name": "stress-rep-guideline",
+  "version": "1.0.0",
+  "description": "Audit a simulation-study write-up (DES, system dynamics, agent-based, or hybrid) against the STRESS reporting checklist of Monks et al. (2019): each of the 20 items reported as Addressed, Partially addressed, Missing, or Not applicable, with quoted and located evidence.",
+  "author": {
+    "name": "Carlos Pineda",
+    "url": "https://github.com/CarlosPiant"
+  },
+  "homepage": "https://github.com/CarlosPiant/AI-assisted-tools/tree/main/plugins/stress-rep-guideline",
+  "repository": "https://github.com/CarlosPiant/AI-assisted-tools",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "keywords": ["simulation", "reporting-guideline", "STRESS", "discrete-event-simulation", "system-dynamics", "agent-based-modelling", "reproducibility"]
+}

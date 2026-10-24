@@ -1,0 +1,19 @@
+{
+  "fixture": "decoy_markov.md",
+  "synthetic": true,
+  "language": "en",
+  "expected_paradigm": "none of DES / SD / ABS (cohort Markov model, health-economic evaluation)",
+  "expected_variants": [],
+  "expected_action": "stop without auditing",
+  "detection_evidence": "Section 2: 'We developed a cohort Markov model with four mutually exclusive health states'; vocabulary is transition probabilities, cycle length, half-cycle correction, ICER, QALY, probabilistic sensitivity analysis. No entities/queues/activities, no stocks/flows/feedback loops, no agents/environment/topology.",
+  "expected_states": {},
+  "expected_message_contents": [
+    "states that STRESS covers discrete-event simulation, system dynamics and agent-based simulation only",
+    "identifies the document as a Markov cohort (health-economic) model",
+    "does not produce a 20-item audit table or a tally",
+    "optionally points the user to a health-economic reporting checklist instead (e.g. CHEERS) without auditing against it"
+  ],
+  "deliberate_gaps": [],
+  "from_supplement": [],
+  "notes": "The 'Monte Carlo draws' in section 4 must not be taken as a DES/SD/ABS signal. The expected outcome is a clear stop message, no report file with item states."
+}

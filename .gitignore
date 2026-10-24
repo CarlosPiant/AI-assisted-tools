@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Local evaluation runs (large; regenerate with the skill-eval protocol)
+workspace/

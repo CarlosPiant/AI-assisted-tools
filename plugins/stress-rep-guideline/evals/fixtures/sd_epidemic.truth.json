@@ -1,0 +1,58 @@
+{
+  "fixture": "sd_epidemic.md",
+  "synthetic": true,
+  "language": "es",
+  "expected_paradigm": "sd",
+  "expected_variants": ["sd"],
+  "detection_basis": "declared",
+  "detection_evidence": "Sección 1: 'Construimos un modelo de dinámica de sistemas (DS) de tipo compartimental'",
+  "expected_states": {
+    "1.1": "Addressed",
+    "1.2": "Addressed",
+    "1.3": "Addressed",
+    "2.1": "Addressed",
+    "2.2": "Addressed",
+    "2.3": "Addressed",
+    "2.4": "Not applicable",
+    "2.5": "Addressed",
+    "3.1": "Partially addressed",
+    "3.2": "Addressed",
+    "3.3": "Addressed",
+    "3.4": "Addressed",
+    "4.1": "Addressed",
+    "4.2": "Addressed",
+    "4.3": "Missing",
+    "5.1": "Addressed",
+    "5.2": "Not applicable",
+    "5.3": "Addressed",
+    "5.4": "Missing",
+    "6.1": "Addressed"
+  },
+  "expected_subitem_states": {
+    "1.3a": "Addressed",
+    "1.3b": "Addressed",
+    "1.3c": "Not applicable",
+    "2.5.1": "Addressed",
+    "2.5.2": "Addressed",
+    "2.5.3": "Addressed",
+    "2.5.4": "Addressed",
+    "2.5.5": "Addressed"
+  },
+  "tally": {"Addressed": 15, "Partially addressed": 1, "Missing": 2, "Not applicable": 2},
+  "deliberate_gaps": [
+    {"item": "3.1", "state": "Partially addressed", "derivation": "Sección 5.1 names the sources (literature references, the weekly bulletin) but gives no sample size, date range or detail of use for any of them (SD-supp 3.1: 'details of the sample size, date ranges and use within the study')."},
+    {"item": "4.3", "state": "Missing", "derivation": "Sección 6.3 declares the model deterministic (first clause of SD-supp 4.3 not applicable) but states 'El modelo se calibró frente a los casos semanales reportados de 2023' without the algorithm/search method or the number of runs that the second clause ('For model calibration or optimisation report the algorithm/search method used and the number replications (runs)') requires."},
+    {"item": "5.4", "state": "Missing", "derivation": "No run time and no hardware specification appear anywhere; section 7 has only 7.1 Software and 7.2 Ejecución."}
+  ],
+  "justified_not_applicable": [
+    {"item": "2.4", "rule": "R24", "evidence": "Sección 4.4: 'El modelo no contiene algoritmos que imiten procesos manuales o complejos del mundo real'"},
+    {"item": "5.2", "rule": "R16", "evidence": "Sección 6.3: 'El modelo es totalmente determinista; no se utilizan entradas estocásticas'"},
+    {"item": "1.3c", "rule": "R22", "evidence": "Sección 3: 'No se utilizó optimización por simulación'"}
+  ],
+  "from_supplement": [],
+  "cross_reference_expectations": {
+    "1.3 <-> 2.3": "consistent (policies P1/P2 and the sensitivity analysis in section 3; section 4.3 describes the logical difference)",
+    "4.3/5.2 <-> 3.3": "consistent: deterministic in 6.3 and 'no se emplean distribuciones de probabilidad' in 5.3"
+  },
+  "notes": "The document is in Spanish. Expected: report prose and state labels in English, evidence quotes in Spanish. Feedback loops are audited under 2.1/2.2 (B1, R1, B2 named in 4.1 and explained in 4.2), not under 2.5."
+}

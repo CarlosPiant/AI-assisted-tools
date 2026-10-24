@@ -1,0 +1,29 @@
+stress-rep-guideline
+Copyright (c) 2026 Carlos Pineda. Licensed under the PolyForm Noncommercial License 1.0.0 (see LICENSE),
+except for the third-party material listed below.
+
+Third-party material: STRESS checklists
+---------------------------------------
+The checklist text in
+
+  skills/stress-rep-guideline/references/stress-des.md
+  skills/stress-rep-guideline/references/stress-sd.md
+  skills/stress-rep-guideline/references/stress-abs.md
+  skills/stress-rep-guideline/references/stress-common.md   (quoted passages)
+  skills/stress-rep-guideline/scripts/checklist.json
+
+is reproduced from:
+
+  Monks, T., Currie, C. S. M., Onggo, B. S., Robinson, S., Kunc, M., & Taylor, S. J. E. (2019).
+  Strengthening the reporting of empirical simulation studies: Introducing the STRESS guidelines.
+  Journal of Simulation, 13(1), 55-67. https://doi.org/10.1080/17477778.2018.1442155
+  and its supplementary checklists STRESS-DES, STRESS-SD and STRESS-ABS.
+
+  Copyright (c) 2018 the authors. Published Open Access under the Creative Commons Attribution 4.0
+  International License (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
+
+Changes: the recommendation text is reproduced verbatim, including the supplements' own typographical
+slips; it was reformatted into Markdown tables and JSON, and applicability notes and rule ids written
+for this skill were added alongside it. Those additions are not part of STRESS and are not endorsed by
+its authors. The CC BY 4.0 licence continues to govern the reproduced checklist text; the PolyForm
+licence covers only the original work in this plugin.

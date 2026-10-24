@@ -1,0 +1,13 @@
+{
+  "name": "skill-generator",
+  "version": "1.0.0",
+  "description": "Turn a manuscript, methods paper, framework, guideline, or tutorial into a tested Claude Code skill: a design brief with page-level locators, the skill itself, a paired benchmark against a no-skill baseline, and a usage guide with a worked example.",
+  "author": {
+    "name": "Carlos Pineda",
+    "url": "https://github.com/CarlosPiant"
+  },
+  "homepage": "https://github.com/CarlosPiant/AI-assisted-tools/tree/main/plugins/skill-generator",
+  "repository": "https://github.com/CarlosPiant/AI-assisted-tools",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "keywords": ["skills", "skill-authoring", "evaluation", "benchmark", "research-methods", "knowledge-transfer"]
+}

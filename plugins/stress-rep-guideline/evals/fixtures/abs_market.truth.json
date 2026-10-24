@@ -1,0 +1,63 @@
+{
+  "fixture": "abs_market.md",
+  "synthetic": true,
+  "language": "en",
+  "expected_paradigm": "abs",
+  "expected_variants": ["abs"],
+  "detection_basis": "declared",
+  "detection_evidence": "Section 1: 'we built an agent-based simulation (ABS) of consumers and firms connected through a social network'",
+  "expected_states": {
+    "1.1": "Addressed",
+    "1.2": "Addressed",
+    "1.3": "Addressed",
+    "2.1": "Addressed",
+    "2.2": "Addressed",
+    "2.3": "Addressed",
+    "2.4": "Addressed",
+    "2.5": "Addressed",
+    "3.1": "Addressed",
+    "3.2": "Addressed",
+    "3.3": "Addressed",
+    "3.4": "Partially addressed",
+    "4.1": "Partially addressed",
+    "4.2": "Addressed",
+    "4.3": "Addressed",
+    "5.1": "Addressed",
+    "5.2": "Addressed",
+    "5.3": "Addressed",
+    "5.4": "Missing",
+    "6.1": "Addressed"
+  },
+  "expected_subitem_states": {
+    "1.3a": "Not applicable",
+    "1.3b": "Addressed",
+    "1.3c": "Not applicable",
+    "1.3d": "Not applicable",
+    "2.5.1": "Addressed",
+    "2.5.2": "Addressed",
+    "2.5.3": "Addressed",
+    "2.5.4": "Not applicable"
+  },
+  "tally": {"Addressed": 17, "Partially addressed": 2, "Missing": 1, "Not applicable": 0},
+  "deliberate_gaps": [
+    {"item": "3.4", "state": "Partially addressed", "derivation": "Section 5.4 lists four assumptions but gives no justification for any of them; ABS-supp 3.4 requires authors to 'state and justify the assumptions'."},
+    {"item": "4.1", "state": "Partially addressed", "derivation": "Section 6.1 gives the initial population, states, attributes, network and declares initialisation stochastic, but nowhere states whether a warm-up period was used (ABS-supp 4.1: 'State if a warm-up period has been used')."},
+    {"item": "5.4", "state": "Missing", "derivation": "Section 7.4 says only 'Hardware specification: not applicable for a model of this size.' No run time and no hardware are given, and no justification beyond model size is offered. Rule R17: 5.4 is never automatically Not applicable; the correct outcome is Missing (low impact for a small model) or, at minimum, Not applicable flagged as 'no justification given'. The audit must not accept the author's N/A claim silently."}
+  ],
+  "justified_not_applicable": [
+    {"item": "2.5.4", "rule": "R25", "evidence": "Section 4.5 Entry / exit: 'no agents are created or destroyed, so rules for agent entry and exit are not applicable to this model'"},
+    {"item": "1.3a", "rule": "R22", "evidence": "Section 3: 'We did not test theories, run a designed experiment, or use simulation optimisation'"},
+    {"item": "1.3c", "rule": "R22", "evidence": "same sentence"},
+    {"item": "1.3d", "rule": "R22", "evidence": "same sentence"}
+  ],
+  "unjustified_not_applicable_claims": [
+    {"item": "5.4", "claim": "Section 7.4: 'Hardware specification: not applicable for a model of this size.'", "expected_handling": "not accepted as N/A; reported as Missing (or N/A with 'no justification given'), citing R17/R1"}
+  ],
+  "from_supplement": [],
+  "cross_reference_expectations": {
+    "1.3 <-> 2.3": "consistent (L0/L1 in section 3; section 4.3 states the only difference)",
+    "4.3/5.2 <-> 3.3": "consistent: stochastic model (6.3), distributions in 5.3, PCG64 and seeds in 7.2",
+    "5.3 <-> 5.1": "consistent: Mesa scheduler described; versions given"
+  },
+  "notes": "2.5 parent is Addressed because every applicable sub-item (2.5.1-2.5.3) is Addressed and 2.5.4 is a justified N/A. 6.1 is Addressed by a repository plus an archive DOI (fictional)."
+}
