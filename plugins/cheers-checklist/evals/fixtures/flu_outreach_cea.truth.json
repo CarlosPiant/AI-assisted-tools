@@ -1,0 +1,98 @@
+{
+  "fixture": "flu_outreach_cea.md",
+  "supplement": null,
+  "synthetic": true,
+  "language": "en",
+  "expected_action": "audit",
+  "expected_study_type": "model-based (decision tree)",
+  "expected_form": "cost-effectiveness analysis (cost per QALY)",
+  "detection_basis": "declared",
+  "detection_evidence": "Abstract: 'A decision-analytic model (decision tree over one influenza season ...)'; 2.13: 'The model is a decision tree (Figure 1).'",
+  "expected_states": {
+    "1": "Addressed",
+    "2": "Addressed",
+    "3": "Addressed",
+    "4": "Addressed",
+    "5": "Addressed",
+    "6": "Addressed",
+    "7": "Addressed",
+    "8": "Addressed",
+    "9": "Addressed",
+    "10": "Addressed",
+    "11": "Addressed",
+    "12": "Addressed",
+    "13": "Addressed",
+    "14": "Addressed",
+    "15": "Addressed",
+    "16": "Addressed",
+    "17": "Addressed",
+    "18": "Addressed",
+    "19": "Missing",
+    "20": "Addressed",
+    "21": "Not applicable",
+    "22": "Addressed",
+    "23": "Addressed",
+    "24": "Addressed",
+    "25": "Not applicable",
+    "26": "Partially addressed",
+    "27": "Addressed",
+    "28": "Addressed"
+  },
+  "tally": {
+    "Addressed": 24,
+    "Partially addressed": 1,
+    "Missing": 1,
+    "Not applicable": 2
+  },
+  "deliberate_gaps": [
+    {
+      "item": 19,
+      "state": "Missing",
+      "derivation": "2.16 'Distributional effects' reads only 'Not applicable to this analysis.' Item 19 has no conditional wording and no reason is given, so the claim is not accepted (rule S2): Missing, with the author's claim quoted. The age subgroups (2.15) are item 18, not 19."
+    },
+    {
+      "item": 26,
+      "state": "Partially addressed",
+      "derivation": "Discussion gives key findings, limitations and implications for the board, but no ethical or equity considerations not captured (absent clause: 'ethical or equity considerations not captured')."
+    }
+  ],
+  "justified_not_applicable": [
+    {
+      "item": 21,
+      "rule": "S2 with R23/R33 (engagement items conditional on engagement having been carried out)",
+      "evidence": "2.18: 'No patients, members of the public or other stakeholders were involved in the design of this study.'"
+    },
+    {
+      "item": 25,
+      "rule": "S2 with R23/R33 (follows item 21)",
+      "evidence": "same sentence"
+    }
+  ],
+  "unjustified_na_claims": [
+    {
+      "item": 19,
+      "claim": "Not applicable to this analysis.",
+      "expected_handling": "Missing (or Not applicable explicitly flagged as unjustified/no reason given); must be distinguished from the justified N/A on 21/25."
+    }
+  ],
+  "from_supplement": [],
+  "explicit_none_statements": [
+    {
+      "item": 4,
+      "state": "Addressed",
+      "evidence": "2.1: 'No health economic analysis plan was prepared for this study.' ('Indicate whether' is answered; rule S3 / R29). Not Missing, not Not applicable."
+    }
+  ],
+  "submission_table_labels": {
+    "19": "Not reported",
+    "21": "Not applicable",
+    "25": "Not applicable"
+  },
+  "cross_check_expectations": {
+    "21 <-> 25": "consistent: both Not applicable from the explicit no-involvement statement",
+    "9, 10 <-> 24": "consistent (discount 0 %/5 % scenario reported)",
+    "16 <-> 17 <-> 22": "consistent (decision tree; validation in 2.14; parameter table 3.1); item 16 Addressed incl. the public repository link"
+  },
+  "tolerances": "Item 19: 'Not applicable' is acceptable only if the row explicitly says the claim is unjustified / no reason given and the item has no conditional wording.",
+  "notes": "The prompt for this fixture never says 'CHEERS'."
+}

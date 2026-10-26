@@ -1,0 +1,24 @@
+{
+  "fixture": "decoy_coi.md",
+  "supplement": null,
+  "synthetic": true,
+  "language": "en",
+  "expected_action": "stop without auditing",
+  "expected_study_type": "not a health economic evaluation (prevalence-based cost-of-illness study, no comparator)",
+  "expected_form": null,
+  "detection_basis": null,
+  "detection_evidence": "Title: 'a prevalence-based cost-of-illness study'; one condition, total and per-person costs, DALYs caused; no alternative course of action, no incremental results, no ICER. Tempting words present: 'societal perspective', 'discounted at 3 %', 'sensitivity analyses', 'human-capital method'.",
+  "expected_states": {},
+  "tally": {},
+  "expected_message_contents": [
+    "identifies the document as a cost-of-illness / burden study",
+    "states that it compares no alternative courses of action",
+    "quotes the CHEERS 2022 definition 'Health economic evaluations are comparative analyses of alternative courses of action in terms of their costs and consequences' with its locator (abstract, PDF p. 1 / journal p. 3)",
+    "states that no CHEERS audit was performed; no 28-item table, no tally"
+  ],
+  "deliberate_gaps": [],
+  "justified_not_applicable": [],
+  "unjustified_na_claims": [],
+  "from_supplement": [],
+  "notes": "The perspective, discount rate and sensitivity analysis must not be taken as evidence that the study is an economic evaluation. A brief note file explaining the stop is acceptable; a report with item states is not."
+}

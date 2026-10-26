@@ -1,0 +1,101 @@
+{
+  "fixture": "cea_ensayo_es.md",
+  "supplement": null,
+  "synthetic": true,
+  "language": "es",
+  "expected_action": "audit",
+  "expected_study_type": "empirical (non-modelling), trial-based",
+  "expected_form": "cost-effectiveness analysis (cost per QALY and per severe exacerbation avoided)",
+  "detection_basis": "declared",
+  "detection_evidence": "Title: 'evaluación económica realizada junto a un ensayo clínico aleatorizado'; 2.1: 'No se utilizó ningún modelo de decisión: el análisis se limitó al periodo de seguimiento del ensayo.'",
+  "expected_states": {
+    "1": "Addressed",
+    "2": "Addressed",
+    "3": "Addressed",
+    "4": "Addressed",
+    "5": "Addressed",
+    "6": "Addressed",
+    "7": "Addressed",
+    "8": "Partially addressed",
+    "9": "Addressed",
+    "10": "Addressed",
+    "11": "Addressed",
+    "12": "Addressed",
+    "13": "Addressed",
+    "14": "Addressed",
+    "15": "Partially addressed",
+    "16": "Not applicable",
+    "17": "Addressed",
+    "18": "Addressed",
+    "19": "Addressed",
+    "20": "Addressed",
+    "21": "Addressed",
+    "22": "Not applicable",
+    "23": "Addressed",
+    "24": "Addressed",
+    "25": "Addressed",
+    "26": "Addressed",
+    "27": "Addressed",
+    "28": "Missing"
+  },
+  "tally": {
+    "Addressed": 23,
+    "Partially addressed": 2,
+    "Missing": 1,
+    "Not applicable": 2
+  },
+  "deliberate_gaps": [
+    {
+      "item": 8,
+      "state": "Partially addressed",
+      "derivation": "2.5: 'Se adoptó la perspectiva del sistema sanitario.' - perspective stated, no reason (absent clause: 'why chosen')."
+    },
+    {
+      "item": 15,
+      "state": "Partially addressed",
+      "derivation": "2.12: 'Todos los costos se expresan en euros.' - currency given; no price year, no dates of resource quantities or unit costs, nothing on conversion."
+    },
+    {
+      "item": 28,
+      "state": "Missing",
+      "derivation": "No conflicts-of-interest statement anywhere (the document ends with the funding section)."
+    }
+  ],
+  "justified_not_applicable": [
+    {
+      "item": 16,
+      "rule": "R14 (non-modelling study)",
+      "evidence": "2.1: 'No se utilizó ningún modelo de decisión: el análisis se limitó al periodo de seguimiento del ensayo.'"
+    },
+    {
+      "item": 22,
+      "rule": "R14 / R36 (non-modelling study)",
+      "evidence": "Same sentence. Tabla 2 lists unit costs; CHEERS names item 22 as an example of an item that does not apply to non-modelling studies, so the state is Not applicable with a note that unit costs are listed under 14."
+    }
+  ],
+  "unjustified_na_claims": [],
+  "from_supplement": [],
+  "explicit_none_statements": [
+    {
+      "item": 10,
+      "state": "Addressed",
+      "evidence": "2.7: 'No se aplicó descuento porque el horizonte temporal fue de 12 meses.' (rate and reason; rule S3)"
+    },
+    {
+      "item": 4,
+      "state": "Addressed",
+      "evidence": "2.1: plan 'se registró junto con el protocolo del ensayo en el registro ISRCTN-00000000 (ficticio)' (whether + where)"
+    }
+  ],
+  "submission_table_labels": {
+    "16": "Not applicable",
+    "22": "Not applicable",
+    "28": "Not reported"
+  },
+  "cross_check_expectations": {
+    "16 <-> 17 <-> 22": "consistent: no model; 17's extrapolation and validation clauses not triggered ('No se realizó extrapolación')",
+    "9, 10 <-> 24": "second sentence of 24 not applicable (12-month horizon, no discounting)"
+  },
+  "tolerances": "Item 22: Not applicable is the expected state (literal R14 example). A run that marks 22 Addressed fails that expectation; this is a deliberate test of following the source's N/A example (design.md J4, open question 3).",
+  "notes": "Report prose and state labels in English; evidence quotes in Spanish copied verbatim; CHEERS guidance quoted in English, not translated."
+}

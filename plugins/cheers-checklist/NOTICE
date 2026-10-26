@@ -1,0 +1,33 @@
+cheers-checklist
+Copyright (c) 2026 Carlos Pineda. Licensed under the PolyForm Noncommercial License 1.0.0 (see LICENSE),
+except for the third-party material listed below.
+
+Third-party material: CHEERS 2022 checklist
+-------------------------------------------
+The checklist text (Table 1, "Guidance for reporting") in
+
+  skills/cheers-checklist/references/cheers-checklist.md
+  skills/cheers-checklist/references/decision-rules.md   (quoted passages)
+  skills/cheers-checklist/references/provenance.md       (quoted passages)
+  skills/cheers-checklist/scripts/checklist.json
+
+is reproduced from:
+
+  Husereau D, Drummond M, Augustovski F, de Bekker-Grob E, Briggs AH, Carswell C, Caulley L,
+  Chaiyakunapruk N, Greenberg D, Loder E, Mauskopf J, Mullins CD, Petrou S, Pwu R-F, Staniszewska S,
+  on behalf of the CHEERS 2022 ISPOR Good Research Practices Task Force. Consolidated Health Economic
+  Evaluation Reporting Standards 2022 (CHEERS 2022) Statement: Updated Reporting Guidance for Health
+  Economic Evaluations. Value in Health 2022;25(1):3-9. https://doi.org/10.1016/j.jval.2021.11.1351
+
+  Copyright (c) 2022 International Society for Pharmacoeconomics and Outcomes Research, Inc. Published
+  Open Access under the Creative Commons Attribution 4.0 International License (CC BY 4.0):
+  https://creativecommons.org/licenses/by/4.0/
+
+Short quotes from the Statement's supplementary Appendix A (GRIPP2 short form) and Appendix B (Delphi
+protocol) appear in the reference files, each with a locator.
+
+Changes: the guidance text is reproduced verbatim, including the Statement's own typographical slips;
+it was reformatted into Markdown tables and JSON, split into clauses, and applicability notes and rule
+ids written for this skill were added alongside it. Those additions are not part of CHEERS and are not
+endorsed by its authors or by ISPOR. The CC BY 4.0 licence continues to govern the reproduced checklist
+text; the PolyForm licence covers only the original work in this plugin.

@@ -1,0 +1,79 @@
+{
+  "fixture": "cua_markov.md",
+  "supplement": null,
+  "synthetic": true,
+  "language": "en",
+  "expected_action": "audit",
+  "expected_study_type": "model-based",
+  "expected_form": "cost-utility analysis",
+  "detection_basis": "declared",
+  "detection_evidence": "Title: 'a Markov model-based economic evaluation'; section 2.12: 'We built a cohort Markov model with four health states'; QALYs and 'ICER of F$ 21,300 per QALY gained' (cost-utility).",
+  "expected_states": {
+    "1": "Addressed",
+    "2": "Addressed",
+    "3": "Addressed",
+    "4": "Missing",
+    "5": "Addressed",
+    "6": "Addressed",
+    "7": "Addressed",
+    "8": "Addressed",
+    "9": "Addressed",
+    "10": "Addressed",
+    "11": "Addressed",
+    "12": "Addressed",
+    "13": "Addressed",
+    "14": "Addressed",
+    "15": "Addressed",
+    "16": "Partially addressed",
+    "17": "Addressed",
+    "18": "Addressed",
+    "19": "Missing",
+    "20": "Addressed",
+    "21": "Addressed",
+    "22": "Addressed",
+    "23": "Addressed",
+    "24": "Addressed",
+    "25": "Addressed",
+    "26": "Addressed",
+    "27": "Addressed",
+    "28": "Addressed"
+  },
+  "tally": {
+    "Addressed": 25,
+    "Partially addressed": 1,
+    "Missing": 2,
+    "Not applicable": 0
+  },
+  "deliberate_gaps": [
+    {
+      "item": 4,
+      "state": "Missing",
+      "derivation": "No statement anywhere on whether a health economic analysis plan was developed."
+    },
+    {
+      "item": 16,
+      "state": "Partially addressed",
+      "derivation": "Section 2.12 describes the Markov model in detail and why it was used ('A Markov model was used because CKD progression is a sequence of irreversible stages ...') but never reports whether the model is publicly available or where it can be accessed (absent clause: 'Report if the model is publicly available and where it can be accessed')."
+    },
+    {
+      "item": 19,
+      "state": "Missing",
+      "derivation": "No description of how impacts are distributed across individuals and no equity adjustment. The diabetes subgroup analysis (2.14) is heterogeneity (item 18), and the Discussion sentence says equity considerations 'were not captured' (item 26) - neither satisfies 19."
+    }
+  ],
+  "justified_not_applicable": [],
+  "unjustified_na_claims": [],
+  "from_supplement": [],
+  "submission_table_labels": {
+    "4": "Not reported",
+    "19": "Not reported"
+  },
+  "cross_check_expectations": {
+    "20 <-> 24": "consistent (DSA, PSA and scenarios in 2.15; results in 3.3)",
+    "9, 10 <-> 24": "consistent (discount 0 %/5 % and horizon 10/20 years reported)",
+    "21 <-> 25": "consistent (workshops in 2.16; effect in 3.4)",
+    "16 <-> 17 <-> 22": "consistent (model used; validation in 2.13; Table 2)"
+  },
+  "tolerances": "None for items 4, 16, 19. Graders should not accept 19 credited from the diabetes subgroup results.",
+  "notes": "A well-reported paper; the run should credit the engagement items 21 and 25 (patient partners' workshops; transport costs added) and the HEAP item must not be marked Not applicable."
+}

@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "ai-assisted-tools",
-  "description": "AI tools for academic research built on Claude: Claude Code plugins for turning methods papers into tested skills and for auditing simulation studies against reporting guidelines.",
+  "description": "AI tools for academic research built on Claude: Claude Code plugins for turning methods papers into tested skills and for auditing simulation studies and health economic evaluations against reporting guidelines.",
   "owner": {
     "name": "Carlos Pineda",
     "url": "https://github.com/CarlosPiant"
@@ -24,6 +24,15 @@
       "category": "productivity",
       "author": { "name": "Carlos Pineda" },
       "homepage": "https://github.com/CarlosPiant/AI-assisted-tools/tree/main/plugins/stress-rep-guideline"
+    },
+    {
+      "name": "cheers-checklist",
+      "description": "Audit a health economic evaluation against the 28-item CHEERS 2022 checklist (Husereau et al. 2022), item by item with quoted evidence and a paste-ready submission table.",
+      "version": "1.0.0",
+      "source": "./plugins/cheers-checklist",
+      "category": "productivity",
+      "author": { "name": "Carlos Pineda" },
+      "homepage": "https://github.com/CarlosPiant/AI-assisted-tools/tree/main/plugins/cheers-checklist"
     }
   ]
 }

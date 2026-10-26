@@ -1,0 +1,114 @@
+{
+  "skill_name": "cheers-checklist",
+  "iteration_cap": 3,
+  "runs_per_case": 1,
+  "threshold": 0.80,
+  "threshold_tier": "standard (skill-eval-protocol.md: conservative 0.90 / standard 0.80 / experimental 0.70; with-skill rate must also exceed without-skill rate)",
+  "fixtures_note": "All fixtures under evals/fixtures/ are synthetic (first-line banner) and each has a <name>.truth.json with the expected state of every item. Graders read only the assertions below and the run's outputs/ folder.",
+  "evals": [
+    {
+      "id": 1,
+      "name": "cua_markov_declared",
+      "prompt": "Apply CHEERS to evals/fixtures/cua_markov.md and tell me what I still need to fix before I submit it.",
+      "expected_output": "A CHEERS 2022 audit report (Markdown file named cheers_checklist_cua_markov.md) with the 28 items in seven categories, each with a state, quoted evidence and locator; header naming a model-based (Markov) cost-utility analysis with basis 'declared' and a tally 25 / 1 / 2 / 0; item 4 Missing, item 16 Partially addressed (no public-availability statement), item 19 Missing; a submission checklist table; a chat summary listing those three items with the verbatim CHEERS guidance.",
+      "files": ["evals/fixtures/cua_markov.md"],
+      "expectations": [
+        "Identifies the study as a model-based (Markov) cost-utility analysis and states the basis as 'declared'.",
+        "Produces a Markdown report file whose name starts with cheers_checklist_ and that contains exactly the 28 CHEERS 2022 items grouped under Title, Abstract, Introduction, Methods, Results, Discussion and Other relevant information.",
+        "Reports item 4 (Health economic analysis plan) as Missing.",
+        "Reports item 16 (Rationale and description of model) as Partially addressed and names the absent clause as whether the model is publicly available and where it can be accessed.",
+        "Reports item 19 (Characterizing distributional effects) as Missing and does not credit it from the diabetes subgroup analysis or from the Discussion sentence on equity considerations.",
+        "Reports items 21 and 25 as Addressed, quoting the patient-partner workshops (section 2.16) and the transport costs added at the partners' request (section 3.4).",
+        "Reports every other item (1-3, 5-15, 17, 18, 20, 22-28) as Addressed.",
+        "The tally reads Addressed 25, Partially addressed 1, Missing 2, Not applicable 0 and matches the per-item states.",
+        "Every Addressed or Partially addressed item carries a verbatim quote from cua_markov.md and a locator (section number or table).",
+        "For items 4, 16 and 19 the report reproduces the verbatim CHEERS 2022 guidance (e.g. 'Indicate whether a health economic analysis plan was developed and where available.') rather than a paraphrase.",
+        "Includes a submission checklist table with 28 rows that gives a document location for every Addressed or Partially addressed item and 'Not reported' for items 4 and 19.",
+        "Does not assign a numeric score, percentage, severity tier (e.g. Critical / Major / Minor) or pass/fail verdict.",
+        "States that the audit covers reporting completeness only, not the quality of the study's conduct or the appropriateness of its methods."
+      ]
+    },
+    {
+      "id": 2,
+      "name": "cea_ensayo_es_spanish",
+      "prompt": "Aplica CHEERS a evals/fixtures/cea_ensayo_es.md y prepárame la tabla de verificación para enviarla a la revista.",
+      "expected_output": "A CHEERS 2022 audit report in English with evidence quotes in Spanish; header naming an empirical (trial-based, non-modelling) cost-effectiveness analysis, basis 'declared'; tally 23 / 2 / 1 / 2; item 8 and item 15 Partially addressed, item 28 Missing; items 16 and 22 Not applicable under CHEERS's example for non-modelling studies; a submission checklist table with 'Not applicable' and 'Not reported' labels.",
+      "files": ["evals/fixtures/cea_ensayo_es.md"],
+      "expectations": [
+        "Identifies the study as a trial-based (empirical, non-modelling) cost-effectiveness analysis with basis 'declared' (title: 'evaluación económica realizada junto a un ensayo clínico aleatorizado').",
+        "Writes report prose and state labels in English while evidence quotes are in Spanish, copied verbatim from the document.",
+        "Quotes the CHEERS 2022 guidance in English, verbatim, for every Missing or Partially addressed item (not translated into Spanish).",
+        "Reports item 8 (Perspective) as Partially addressed because the perspective is stated without the reason it was chosen.",
+        "Reports item 15 (Currency, price date, and conversion) as Partially addressed: the currency (euros) is stated but no price year or dates of resource quantities and unit costs.",
+        "Reports item 28 (Conflicts of interest) as Missing.",
+        "Reports items 16 and 22 as Not applicable, citing CHEERS's statement that items 16 and 22 do not apply to non-modelling studies, and quotes 'No se utilizó ningún modelo de decisión' as the document's justification.",
+        "Reports item 10 (Discount rate) as Addressed (not Not applicable and not Missing), quoting 'No se aplicó descuento porque el horizonte temporal fue de 12 meses'.",
+        "Reports item 4 as Addressed, quoting the registration of the economic analysis plan with the trial protocol.",
+        "Reports items 19, 21 and 25 as Addressed (results by income quintile; patient advisory committee; questions added after its input).",
+        "The tally reads Addressed 23, Partially addressed 2, Missing 1, Not applicable 2 and matches the per-item states.",
+        "Includes a submission checklist table with 28 rows reading 'Not applicable' for items 16 and 22 and 'Not reported' for item 28; the label 'Not conducted' is not used.",
+        "Does not assign a numeric score, percentage, severity tier or pass/fail verdict."
+      ]
+    },
+    {
+      "id": 3,
+      "name": "flu_outreach_no_keyword",
+      "prompt": "Before I send evals/fixtures/flu_outreach_cea.md to a health economics journal, check it item by item against the reporting standard for health economic evaluations and tell me what a referee would say is missing.",
+      "expected_output": "A CHEERS 2022 audit report although the prompt never names CHEERS; model-based (decision tree) CEA, basis 'declared'; items 21 and 25 Not applicable justified by the explicit no-involvement statement; item 19 Missing with the author's unjustified 'Not applicable' claim flagged; item 4 Addressed from 'No health economic analysis plan was prepared'; item 26 Partially addressed; tally 24 / 1 / 1 / 2.",
+      "files": ["evals/fixtures/flu_outreach_cea.md"],
+      "expectations": [
+        "Audits the document against the 28-item CHEERS 2022 checklist although the prompt does not name CHEERS, and identifies a model-based (decision tree) cost-effectiveness analysis with basis 'declared'.",
+        "Reports items 21 and 25 as Not applicable, quoting 'No patients, members of the public or other stakeholders were involved in the design of this study.' as the document's justification.",
+        "Reports item 19 as Missing (or as Not applicable explicitly flagged as unjustified), quoting the author's claim 'Not applicable to this analysis.' and noting that no reason is given or that the item has no conditional wording.",
+        "The Not applicable section distinguishes the justified omission (21, 25) from the unjustified claim on 19.",
+        "Reports item 4 as Addressed, quoting 'No health economic analysis plan was prepared for this study.' (not Missing and not Not applicable).",
+        "Reports item 26 as Partially addressed and names the absent clause 'ethical or equity considerations not captured'.",
+        "Reports item 16 as Addressed, including the statement that the code is publicly available at the repository link.",
+        "Reports item 18 as Addressed (age subgroups 65-74 and 75+) and does not use the age subgroups as evidence for item 19.",
+        "Reports every other item (1-3, 5-15, 17, 20, 22-24, 27, 28) as Addressed.",
+        "The tally reads Addressed 24, Partially addressed 1, Missing 1, Not applicable 2 and matches the per-item states.",
+        "Includes a submission checklist table with 'Not applicable' for items 21 and 25 and 'Not reported' for item 19 (if reported as Missing).",
+        "Does not assign a numeric score, percentage, severity tier or pass/fail verdict."
+      ]
+    },
+    {
+      "id": 4,
+      "name": "thin_model_inferred_with_appendix",
+      "prompt": "Run the CHEERS 2022 checklist on evals/fixtures/thin_model.md; the technical appendix is evals/fixtures/thin_model_appendix.md. Just do it, don't ask me anything.",
+      "expected_output": "A CHEERS 2022 audit of a thin evaluation; header basis 'inferred, user said proceed' with the model vocabulary; both files audited; items 15 and 22 Addressed with appendix locators; many Missing items (2, 4, 8, 18, 21, 25, 27, 28 among them); 16 and 24 Partially addressed; tally consistent with the states shown (expected about 8 / 7 / 13 / 0).",
+      "files": [
+        "evals/fixtures/thin_model.md",
+        "evals/fixtures/thin_model_appendix.md"
+      ],
+      "expectations": [
+        "Infers that modelling is used (a cohort / state-transition model) and a cost-utility form, states the basis as inferred with 'user said proceed' (or equivalent, because no question was asked), and cites model vocabulary such as 'hypothetical cohort', 'health states', 'yearly cycles' or 'transition probabilities'.",
+        "Lists both thin_model.md and thin_model_appendix.md as files audited.",
+        "Reports item 15 (Currency, price date, and conversion) as Addressed with a locator in thin_model_appendix.md (section A1).",
+        "Reports item 22 (Study parameters) as Addressed with a locator in thin_model_appendix.md (section A2).",
+        "Reports items 2 (Abstract), 4 (Health economic analysis plan), 8 (Perspective), 27 (Source of funding) and 28 (Conflicts of interest) as Missing.",
+        "Reports item 16 as Partially addressed, naming as absent the reason modelling was used and/or whether the model is publicly available and where.",
+        "Reports item 24 as Partially addressed, noting that the effect of the discount rate and time horizon is not reported.",
+        "Reports items 18, 21 and 25 as Missing (not Not applicable), because the document is silent on subgroups and engagement.",
+        "Reports items 9 (Time horizon) and 10 (Discount rate) as Partially addressed because no reason is given.",
+        "The tally over the 28 items is consistent with the per-item states shown (expected Addressed 8, Partially addressed 7, Missing 13, Not applicable 0; deviations of up to 2 per state acceptable if they come from items 1, 7, 12, 17 or 20).",
+        "Flags at least one cross-check inconsistency: 9/10 vs 24 (discounting and a lifetime horizon used but their effect not reported) or 20 vs 24 (a sensitivity result reported without a described method).",
+        "Includes a submission checklist table with 28 rows reading 'Not reported' for every Missing item."
+      ]
+    },
+    {
+      "id": 5,
+      "name": "decoy_cost_of_illness_stop",
+      "prompt": "CHEERS checklist for evals/fixtures/decoy_coi.md please.",
+      "expected_output": "No audit. A short message saying the document is a prevalence-based cost-of-illness study that compares no alternative courses of action, quoting the CHEERS 2022 definition of a health economic evaluation with its locator, and that no CHEERS audit was performed.",
+      "files": ["evals/fixtures/decoy_coi.md"],
+      "expectations": [
+        "Recognises the document as a cost-of-illness / economic-burden study with no comparator (no alternative course of action compared).",
+        "Stops without auditing: no 28-item table, no per-item states and no tally are produced.",
+        "Quotes or cites the CHEERS 2022 definition that health economic evaluations are 'comparative analyses of alternative courses of action in terms of their costs and consequences'.",
+        "Does not write a cheers_checklist_ report file containing item states (a brief note file explaining the stop is acceptable).",
+        "Does not treat the societal perspective, the 3 % discount rate or the sensitivity analyses as evidence that the study is a health economic evaluation.",
+        "Does not run a 'closest fit' audit unless the user explicitly asks for one."
+      ]
+    }
+  ]
+}

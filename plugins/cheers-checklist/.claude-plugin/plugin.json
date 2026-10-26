@@ -1,0 +1,13 @@
+{
+  "name": "cheers-checklist",
+  "version": "1.0.0",
+  "description": "Audit a health economic evaluation (model-based, trial-based, or cost analysis) against the 28-item CHEERS 2022 checklist (Husereau et al. 2022): each item reported as Addressed, Partially addressed, Missing, or Not applicable, with quoted and located evidence and a paste-ready submission table.",
+  "author": {
+    "name": "Carlos Pineda",
+    "url": "https://github.com/CarlosPiant"
+  },
+  "homepage": "https://github.com/CarlosPiant/AI-assisted-tools/tree/main/plugins/cheers-checklist",
+  "repository": "https://github.com/CarlosPiant/AI-assisted-tools",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "keywords": ["health-economics", "economic-evaluation", "reporting-guideline", "CHEERS", "cost-effectiveness", "HTA", "ISPOR"]
+}

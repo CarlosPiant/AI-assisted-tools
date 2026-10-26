@@ -1,0 +1,185 @@
+{
+  "fixture": "thin_model.md",
+  "supplement": "thin_model_appendix.md",
+  "synthetic": true,
+  "language": "en",
+  "expected_action": "audit",
+  "expected_study_type": "model-based (inferred)",
+  "expected_form": "cost-utility analysis (inferred: costs and QALYs; dominance)",
+  "detection_basis": "inferred, user said proceed",
+  "detection_evidence": "No declaration: the words 'model', 'Markov', 'decision tree' and 'trial' do not appear. Model vocabulary: 'hypothetical cohort', 'four health states', 'yearly cycles', 'lifetime horizon', 'transition probabilities'. Form: costs and QALYs per strategy, 'less costly and more effective (dominant)'. The prompt says 'Just do it', so no pause: header basis 'inferred, user said proceed' with the vocabulary evidence.",
+  "expected_states": {
+    "1": "Partially addressed",
+    "2": "Missing",
+    "3": "Addressed",
+    "4": "Missing",
+    "5": "Addressed",
+    "6": "Addressed",
+    "7": "Partially addressed",
+    "8": "Missing",
+    "9": "Partially addressed",
+    "10": "Partially addressed",
+    "11": "Addressed",
+    "12": "Missing",
+    "13": "Missing",
+    "14": "Addressed",
+    "15": "Addressed",
+    "16": "Partially addressed",
+    "17": "Missing",
+    "18": "Missing",
+    "19": "Missing",
+    "20": "Missing",
+    "21": "Missing",
+    "22": "Addressed",
+    "23": "Addressed",
+    "24": "Partially addressed",
+    "25": "Missing",
+    "26": "Partially addressed",
+    "27": "Missing",
+    "28": "Missing"
+  },
+  "tally": {
+    "Addressed": 8,
+    "Partially addressed": 7,
+    "Missing": 13,
+    "Not applicable": 0
+  },
+  "from_supplement": [
+    {
+      "item": 15,
+      "state": "Addressed",
+      "evidence": "Appendix A1: 'All costs are expressed in Northshire dollars (N$, fictional) at 2023 prices. Unit costs are taken from the 2023 regional unit cost tariff; resource quantities ... come from the 2021–2022 orthopaedic follow-up audit. No currency conversion was required.' Main text has nothing on currency or price date."
+    },
+    {
+      "item": 22,
+      "state": "Addressed",
+      "evidence": "Appendix A2 table: every input with base case, range, distribution and reference. Main-text Table 1 gives values only."
+    }
+  ],
+  "deliberate_gaps": [
+    {
+      "item": 1,
+      "state": "Partially addressed",
+      "derivation": "Title names the intervention and 'costs and quality-adjusted life years' but not the comparator (clinic follow-up)."
+    },
+    {
+      "item": 2,
+      "state": "Missing",
+      "derivation": "No abstract."
+    },
+    {
+      "item": 4,
+      "state": "Missing",
+      "derivation": "No analysis-plan statement."
+    },
+    {
+      "item": 7,
+      "state": "Partially addressed",
+      "derivation": "Both strategies described (Methods para 3); no explicit reason for choosing them."
+    },
+    {
+      "item": 8,
+      "state": "Missing",
+      "derivation": "Perspective never stated ('tax-funded health service' describes the setting, not a perspective)."
+    },
+    {
+      "item": 9,
+      "state": "Partially addressed",
+      "derivation": "'over a lifetime horizon' with no reason."
+    },
+    {
+      "item": 10,
+      "state": "Partially addressed",
+      "derivation": "'discounted at 3.5 % per year' with no reason."
+    },
+    {
+      "item": 12,
+      "state": "Missing",
+      "derivation": "'Each health state has a utility weight.' - nothing on how outcomes were measured."
+    },
+    {
+      "item": 13,
+      "state": "Missing",
+      "derivation": "No population or method for valuing outcomes (the appendix cites 'Imaginary et al. 2019' as a reference for the utility values only)."
+    },
+    {
+      "item": 16,
+      "state": "Partially addressed",
+      "derivation": "Health states, cycles and horizon described; no reason for modelling; no statement on public availability."
+    },
+    {
+      "item": 17,
+      "state": "Missing",
+      "derivation": "No methods for analysing/transforming data, extrapolation or validation."
+    },
+    {
+      "item": 18,
+      "state": "Missing",
+      "derivation": "Silent on subgroups (silence -> Missing, not N/A)."
+    },
+    {
+      "item": 19,
+      "state": "Missing",
+      "derivation": "Silent."
+    },
+    {
+      "item": 20,
+      "state": "Missing",
+      "derivation": "No uncertainty methods described (results mention sensitivity to one parameter; appendix lists ranges and distributions without saying how they were used)."
+    },
+    {
+      "item": 21,
+      "state": "Missing",
+      "derivation": "Silent on engagement (silence -> Missing, not N/A)."
+    },
+    {
+      "item": 24,
+      "state": "Partially addressed",
+      "derivation": "Effect of the year-1 readmission probability reported; no effect of discount rate or time horizon although both apply (lifetime, 3.5 %)."
+    },
+    {
+      "item": 25,
+      "state": "Missing",
+      "derivation": "Silent."
+    },
+    {
+      "item": 26,
+      "state": "Partially addressed",
+      "derivation": "Findings, limitations and practice implications; no ethical or equity considerations not captured."
+    },
+    {
+      "item": 27,
+      "state": "Missing",
+      "derivation": "No funding statement."
+    },
+    {
+      "item": 28,
+      "state": "Missing",
+      "derivation": "No conflicts-of-interest statement."
+    }
+  ],
+  "justified_not_applicable": [],
+  "unjustified_na_claims": [],
+  "submission_table_labels": {
+    "2": "Not reported",
+    "4": "Not reported",
+    "8": "Not reported",
+    "12": "Not reported",
+    "13": "Not reported",
+    "17": "Not reported",
+    "18": "Not reported",
+    "19": "Not reported",
+    "20": "Not reported",
+    "21": "Not reported",
+    "25": "Not reported",
+    "27": "Not reported",
+    "28": "Not reported"
+  },
+  "cross_check_expectations": {
+    "20 <-> 24": "inconsistent: 24 reports a sensitivity result but 20 describes no method",
+    "9, 10 <-> 24": "inconsistent: discounting and lifetime horizon used but their effect not reported",
+    "16 <-> 17 <-> 22": "model inferred; 16 Partial, 17 Missing (no validation), 22 Addressed from the appendix"
+  },
+  "tolerances": "Borderline items where one notch either way is acceptable if the row explains it: 1 (Partial or Missing), 7 (Partial or Addressed if the Background is cited as the reason), 12 and 17 and 20 (Missing or Partial). The evals.json expectations therefore test exact states only on 2, 4, 8, 15, 16, 22, 24, 27, 28 and require the tally to be consistent with the states shown.",
+  "notes": "Key multi-file test: 15 and 22 are credited from thin_model_appendix.md with an appendix locator."
+}
